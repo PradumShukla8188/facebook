@@ -1,0 +1,120 @@
+<!-- <button style="margin-left: 92%;" type="button" class="btn btn-danger" (click)="logout()">Logout</button> -->
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Country</th>
+        <th scope="col">Profile Setting</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let item of data; ">
+        <td>{{item.getUser.name}}</td>
+        <td>{{item.getUser.email}}</td>
+        <td>{{item.getUser.age}}</td>
+        <td>{{item.getUser.country}}</td>
+        <td>
+<a  class="btn btn-warning" routerLink="/profileSettings">Profile Setting </a>
+        
+        </td>
+      
+      </tr>
+    </tbody>
+  </table>
+
+
+<a style="margin-left: 0; margin-bottom: 2%;" class="btn btn-primary" routerLink="/postprofile">User Posts </a>
+  <span style="margin-left: 50%;" class="text-warning ttext-center h1 fw-bold mb-5 ">Post Details</span>
+<a style="margin-left: 20%; margin-bottom: 2%;" class="btn btn-warning" routerLink="/postCreate">Create Post </a>
+
+<!--CHild component send data to dashboard Two Hours Ago Create Post SHow-->
+<div class="form-control">
+  <app-postchild [data]="post2hoursAgo" [heading]="postTitle2HoursAgo" ></app-postchild>
+</div>
+
+<!--CHild component send data to dashboard Two Day Ago Create Post SHow-->
+<div class="form-control">
+  <app-postchild [data]="post2daysAgo" [heading]="postTitle2DaysAgo"></app-postchild>
+</div>
+
+<!--CHild component send data to dashboard Five Day Ago Create Post SHow-->
+<div class="form-control">
+  <app-postchild [data]="post5dayssAgo" [heading]="postTitle5DayssAgo"></app-postchild>
+</div>
+
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<span style="margin-left: 50%;" class="text-warning ttext-center h1 fw-bold mb-5 ">Post Details</span>
+<a style="margin-left: 20%; margin-bottom: 2%;" class="btn btn-warning" routerLink="/postCreate">Create Post </a>
+
+<div class="card text-black" style="border-radius: 25px;" id="post">
+  <div class="card-body p-md-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+      </div>
+        <h1 class="text-center h1 fw-bold mb-5  "> 2 Hours Ago Added Posts Details</h1>
+      
+      <hr> -->
+      <!-- <div *ngFor= "let data of post2hoursAgo;" class="card" style="width: 18rem; margin-left: 20px;">
+        <img src="{{serverRunning+data.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">  </h5>
+          <p class="card-text"> <strong>Title:</strong> <span class="text-warning">{{data.title}}</span></p>
+          <p class="card-text"> <strong>Description:</strong> <span class="text-danger">{{data.description}}</span></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="btn btn-primary">view more...</a>
+          
+        </div>
+      </div>
+      <hr> -->
+      
+      <!--section 2 day ago show posts -->
+      <!-- <div class="form-control">
+        <marquee class="blink"  direction="left" scrollamount="20">
+          <h1 class="text-success text-center"> 2 Days Ago Added Posts</h1>
+          </marquee>
+      </div>
+      <hr> -->
+      <!-- <div *ngFor= "let data of post2daysAgo;" class="card" style="width: 18rem;margin-left: 20px; margin-bottom: 10px;">
+        <img src="{{serverRunning+data.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">  </h5>
+          <p class="card-text"> <strong>Title:</strong> <span class="text-warning">{{data.title}}</span></p>
+          <p class="card-text"> <strong>Description:</strong> <span class="text-danger">{{data.description}}</span></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="btn btn-primary">view more...</a>
+          
+        </div>
+      </div>
+      <hr> -->
+    
+    <!-- Section 3 5 days old post show -->
+    <!-- <div class="form-control">
+      <h1 class="text-warning text-center"> 5 Days Ago Added Posts</h1>
+    </div>
+    <hr>
+    <div *ngFor= "let data of post5dayssAgo;" class="card" style="width: 18rem;margin-left: 20px; margin-bottom: 10px;">
+      <img src="{{serverRunning+data.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">  </h5>
+        <p class="card-text"> <strong>Title:</strong> <span class="text-warning">{{data.title}}</span></p>
+        <p class="card-text"> <strong>Description:</strong> <span class="text-danger">{{data.description}}</span></p>
+      </div>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary">view more...</a>
+        
+      </div>
+    </div>
+    <hr> -->
+
+    <!-- </div>
+  </div>
+</div> -->
+
+
+<!-- <router-outlet></router-outlet> -->
+

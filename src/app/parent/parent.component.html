@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="row">
+        <h1 style="color:blue; text-align: center;"> Parent Component </h1>
+    </div>
+    <div class="col-6">
+        <p class="text-warning">Received child Message: <span class="text-danger">{{ childInputValue }}</span></p>
+        <p class="text-danger ">Message from child: <span class="text-warning">{{ receivedMessage }}</span></p>
+    </div>
+    <input type="text" class="form-control text-success" style="width: 25%;" [(ngModel)]="message" [value]="childInputValue">
+    <button class="btn btn-primary my-2" type="submit" (click)="sendButtonMsg()">Submit</button>
+</div>
+
+
+<app-child [receivedMessage]="message" (messageEvent)="receiveMessage($event)"[recievedbuttonClickedMessage]="buttonClickedMessage" (valueChanged)="updateChildInputValue($event)" ></app-child>
+

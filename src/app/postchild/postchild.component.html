@@ -1,0 +1,79 @@
+
+<div class="card text-black" style="border-radius: 25px;" id="post">
+    <div class="card-body p-md-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+        </div>
+          <h1 class="text-center h1 fw-bold mb-5  "> {{heading}}</h1>
+        
+        <hr>
+       
+        <div *ngFor= "let data of data;" class="card" style="width: 20rem; margin-left: 20px; margin-bottom: 2%;">
+          <p class="card-text"> {{data.createdAt | timeupdate}} <strong>userName: &nbsp; </strong> <span class="text-danger">{{data.user}}</span></p>
+          <img src="{{serverRunning+data.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"> <strong>Title:&nbsp;</strong> <span class="text-warning">{{data.title}}</span></p>
+            <p class="card-text"> <strong>Description:&nbsp;</strong> <span class="text-danger">{{data.description}}</span></p>
+          </div>
+          <div class="card-body">
+            <a routerLink="/viewmore/{{data._id}}" class="btn btn-primary" >view more...</a>
+            <i style="margin-left: 5px;" title="like" class="fa-sharp fa-regular fa-thumbs-up fa-2xl" (click)="likePost(data._id)"></i>
+            <!-- <i style="margin-left: 5px;" title="dislike" class="fa-regular fa-thumbs-down fa-2xl"(click)="dislikePost()"></i> -->
+            <!-- <i style="margin-left: 5px;" title="comment" class="fa-regular fa-comment-dots fa-2xl"(click)="openCommentBox()"></i> -->
+            <app-comments *ngIf="isCommentBoxOpen"></app-comments>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    <hr> <br>
+    <!-- <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Sr. No</th>
+          <th scope="col">Post Title</th>
+          <th scope="col">Post Description</th>
+          <th scope="col">Post Image</th>
+          <th scope="col">View More</th>
+          <th scope="col">Like</th>
+          <th scope="col">DisLike</th>
+          <th scope="col">Post Remove</th>
+          <th scope="col">Post Update</th>
+        
+        
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let data of data; index as i">
+          
+          <td> {{i+1}} </td>
+          <td>{{data.title}}</td>
+          <td>{{data.description}}</td>
+          <td><img src="{{serverRunning+data.image}}" alt="..." width="25px"></td>
+          <td>
+            <a routerLink="/viewmore/{{data._id}}" class="btn btn-primary" >view more...</a>
+          </td>
+          <td>
+            <i style="margin-left: 5px;" title="like" class="fa-sharp fa-regular fa-thumbs-up fa-2xl" (click)="likePost(data)" ></i>
+          
+          </td>
+          <td>
+            <i style="margin-left: 5px;" title="dislike" class="fa-regular fa-thumbs-down fa-2xl"(click)="dislikePost()"></i>
+          
+          </td>
+        <td>
+          <i class="fa-solid fa-trash"></i>
+        
+        </td>
+        <td>
+          <i class="fa-solid fa-user-pen"></i>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+     -->
+
+    

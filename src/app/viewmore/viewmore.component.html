@@ -1,0 +1,36 @@
+<div class="card text-black" style="border-radius: 25px;" id="post">
+    <div class="card-body p-md-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+        </div>
+          <h1 class="text-center h1 fw-bold mb-5  "> {{heading}}</h1>
+        
+        <hr>
+        <div  class="card" style="width: 18rem; margin-left: 20px; margin-bottom: 2%;">
+          <img src="{{serverRunning+resData.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-warning"> Post ID: &nbsp;&nbsp;<strong class="text-warning">{{resData.userId}} </strong></h5>
+            <h5 class="card-title text-warning"> User Id:&nbsp;&nbsp;<strong class="text-warning">{{resData._id}} </strong></h5>
+            <p class="card-text"> <strong>Title:&nbsp;&nbsp;</strong> <span class="text-warning">{{resData.title}}</span></p>
+            <p class="card-text"> <strong>Description:&nbsp;&nbsp;</strong> <span class="text-danger">{{resData.description}}</span></p>
+            <!-- <p class="card-text"> <strong>CreatedAt:&nbsp;&nbsp;</strong> <span class="text-danger">{{resData.createdAt}}</span></p>
+            <p class="card-text"> <strong>UpdatedAt:&nbsp;&nbsp;</strong> <span class="text-danger">{{resData.updatedAt}}</span></p> -->
+            
+            <button type="button" class="btn btn-primary ml-1">
+              Likes <span class="badge badge-danger"> {{resData.likes}} </span>
+            </button>
+            <button style="margin-left: 5px;" type="button" class="btn btn-danger ml-1">
+              Dislikes <span class="badge badge-danger"> {{resData. dislikes}} </span>
+            </button>
+            <button style="margin-top: 10px;" type="button" class="btn btn-danger ml-1">
+              Comments <span class="badge badge-warning my-2"> {{resData.comments}} </span>
+            </button>
+          </div>
+          <div class="card-body">
+            <a routerLink="/dashboard" class="btn btn-warning">Go To Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+

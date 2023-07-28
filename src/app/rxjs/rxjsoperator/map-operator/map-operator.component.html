@@ -1,0 +1,165 @@
+<p>map-operator works!</p>
+<h1 class="text-center text-danger"> Map Operator Rxjs.</h1>
+<hr>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <strong> Ex - 01</strong>
+            <hr>
+            <p class="text-warning bg-light py-2 px-3 border rounded">
+                <strong>Map</strong> 'Aideo' + data * 10
+            </p> <br>
+            <p class="text-success"> <strong class="text-warning">Message</strong> {{msgAudio}} </p>
+
+        </div>
+        <div class="col-md-4">
+            <strong> Ex - 02</strong>
+            <hr>
+            <p class="text-warning bg-light py-2 px-3 border rounded">
+                <strong>Map</strong> 'Video' + data
+            </p> <br>
+            <p class="text-success"> <strong class="text-warning">Message</strong> {{msg}} </p>
+        </div>
+        <div class="col-md-4">
+            <strong> Ex - 03</strong>
+            <hr>
+            <p class="text-warning bg-light py-2 px-3 border rounded">
+                <strong>Map</strong> Map Object  Data
+            </p> <br>
+            <ul id="elContainer"></ul>
+        </div>
+    </div>
+</div>
+<hr> <br> <br>
+<div class="container">
+    <div class="row">
+        <h2 class="text-success text-center">Filter Operator Rxjs</h2>
+        <div class="col-md-4">
+            <strong> Ex - 01</strong>
+            <hr>
+            <p class="text-warning bg-light py-2 px-3 border rounded">
+                <strong>Filter By:</strong> Length
+            </p> <br>
+            <table  class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"> Sr.No</th>
+                        <th scope="col"> Id</th>
+                    <th scope="col"> Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let filterByLength of myData; index as i">
+                        <td > {{i+1}} </td>
+                        <td > {{filterByLength.id}} </td>
+                        <td > {{filterByLength.name}} </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <strong> Ex - 02</strong>
+            <hr>
+            <p class="text-danger bg-light py-2 px-3 border rounded">
+                <strong>Filter By:</strong> Gender
+            </p> <br>
+            <table  class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Sr. No</th>
+                        <th scope="col"> Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Gender</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let filterByGender of data; index as i">
+                        <td > {{i+1}} </td>
+                        <td > {{filterByGender.id}} </td>
+                        <td > {{filterByGender.name}} </td>
+                        <td > {{filterByGender.gender}} </td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+        
+        </div>
+        <div class="col-md-4">
+            <strong> Ex - 03</strong>
+            <hr>
+            <p class="text-warning bg-light py-2 px-3 border rounded">
+                <strong>Filter By:</strong> nth Item
+            </p> <br>
+            <table  class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Sr.No</th>
+                        <th scope="col"> Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Gender</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let filterByItem of mydb; index as i">
+                        <td > {{i+1}} </td>
+                        <td > {{filterByItem.id}} </td>
+                        <td > {{filterByItem.name}} </td>
+                        <td > {{filterByItem.gender}} </td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<hr><br>
+
+<!-- switch map -->
+<div class="container">
+    <div class="row">
+        <h2 class="text-success text-center">Switch Map Operator Rxjs</h2>
+        <h4 class="text-success text-center">Search By user name</h4>
+        <!-- <form #myForm="ngForm" > -->
+            <div class="col-md-4">
+                <strong> Ex - 01</strong>
+                <input type="search"  name="searchTerm" class="form-control form-control-lg"
+                [(ngModel)]="searchTerm" (input)="search()">
+            </div>
+            <ul>
+                <li *ngFor="let item of filteredData">{{ item.name }}</li>
+              </ul>
+        <!-- </form> -->
+            <div class="result">
+                <div class="d-flex">
+                    <h5 class="text-danger">Search Results</h5>
+                    <h6 style="margin-left: 226px;" class="text-danger "> 5 Results found...</h6>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Sr. No</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let search of searchByName; index as i">
+                        <td> {{i+1}} </td>
+                        <td> {{search.id}} </td>
+                        <td>{{search.name}}</td>
+                        <td>{{search.gender}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+    </div>
+</div>
+

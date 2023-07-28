@@ -1,0 +1,44 @@
+<h1>Login From</h1>
+
+<section>
+  <form [formGroup]="userLogin"  (ngSubmit)="login();printValue();">
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter email"
+        name="email"
+        formControlName="email"
+      />
+      <div *ngIf="validateFiled['email'].touched && validateFiled['email'].invalid" class="error">
+        <div *ngIf="validateFiled['email'].errors && validateFiled['email'].errors['required']">Email Adrress is required.</div>
+        <div *ngIf="validateFiled['email'].errors && validateFiled['email'].errors['pattern']">Invaild Email Address..</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        class="form-control"
+        minlength="8"
+        maxlength="20"
+        id="password"
+        placeholder="Enter password number"
+        name="password"
+        formControlName="password"
+      />
+      <div *ngIf="validateFiled['password'].touched && validateFiled['password'].invalid" class="error">
+        <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['required']">Password is required.</div>
+        <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['minlength']">Password should be 8-20 character....</div>
+        <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['pattern']">Atleas 1alphabate 1 newmeric 1 special character required..</div>
+    </div>
+    </div>
+     
+     <button type="submit" class="btn btn-default"> Submit </button>
+      <!-- <button type="button" class="btn btn-primary" (click)="forgetPassword()"> ForgetPassword </button> -->
+  </form>
+</section>

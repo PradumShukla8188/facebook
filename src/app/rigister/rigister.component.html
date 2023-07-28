@@ -1,0 +1,106 @@
+<section class="vh-100 bg-image 
+"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div style="margin-top: 5%; margin-bottom: 5%;" class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              
+              <form [formGroup]="userRegister"  (ngSubmit)="signUpUser();printValue();">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" formControlName="name"/>
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                  <div *ngIf="validateFiled['name'].touched && validateFiled['name'].invalid" class="error">
+                    <div *ngIf="validateFiled['name'].errors && validateFiled['name'].errors['required']"> Name is required.</div>
+                    <div *ngIf="validateFiled['name'].errors && validateFiled['name'].errors['minlength']"> Name should be min 3 character required..</div>
+                    <div *ngIf="validateFiled['name'].errors && validateFiled['name'].errors['maxlength']"> Name should be max 20 character required..</div>
+                    <div *ngIf="validateFiled['name'].errors && validateFiled['name'].errors['pattern']">Special Character not allowed..</div>
+                
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" formControlName="email"/>
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                  <div *ngIf="validateFiled['email'].touched && validateFiled['email'].invalid" class="error">
+                    <div *ngIf="validateFiled['email'].errors && validateFiled['email'].errors['required']">Email Adrress is required.</div>
+                    <div *ngIf="validateFiled['email'].errors && validateFiled['email'].errors['pattern']">Invaild Email Address..</div>
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" formControlName="password"/>
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                  <div *ngIf="validateFiled['password'].touched && validateFiled['password'].invalid" class="error">
+                    <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['required']">Password is required.</div>
+                    <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['minlength']">Password should be 8 character....</div>
+                    <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['maxlength']">Password should be 20 character required....</div>
+                    <div *ngIf="validateFiled['password'].errors && validateFiled['password'].errors['pattern']">Atleas 1alphabate 1 newmeric 1 special character required..</div>
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" formControlName="confirmPassword"/>
+                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  <div *ngIf="validateFiled['confirmPassword'].touched && validateFiled['confirmPassword'].invalid" class="error">
+                    <div *ngIf="validateFiled['confirmPassword'].errors && validateFiled['confirmPassword'].errors['required']"> Confirm Password is required.</div>
+                    <div *ngIf="validateFiled['confirmPassword'].errors && validateFiled['confirmPassword'].errors['minlength']"> Confirm Password should be 8 character....</div>
+                    <div *ngIf="validateFiled['confirmPassword'].errors && validateFiled['confirmPassword'].errors['maxlength']"> Confirm Password should be 20 character required....</div>
+                    <div *ngIf="validateFiled['confirmPassword'].errors && validateFiled['confirmPassword'].errors['pattern']">Atleas 1alphabate 1 newmeric 1 special character required..</div>
+                </div>
+                </div>
+                
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" formControlName="age"/>
+                  <label class="form-label" for="form3Example1cg">Your Age</label>
+                  <div *ngIf="validateFiled['age'].touched && validateFiled['age'].invalid" class="error">
+                    <div *ngIf="validateFiled['age'].errors && validateFiled['age'].errors['required']"> Age is required.</div>
+                    <div *ngIf="validateFiled['age'].errors && validateFiled['age'].errors['minlength']"> Age should be min 1 year required..</div>
+                    <div *ngIf="validateFiled['age'].errors && validateFiled['age'].errors['maxlength']"> Age should be max 120 year allowed..</div>
+                    <div *ngIf="validateFiled['age'].errors && validateFiled['age'].errors['pattern']">Only Digits (Numbers) allowed..</div>
+                
+                </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" formControlName="country"/>
+                  <label class="form-label" for="form3Example1cg">Your Country</label>
+                  <div *ngIf="validateFiled['country'].touched && validateFiled['country'].invalid" class="error">
+                    <div *ngIf="validateFiled['country'].errors && validateFiled['country'].errors['required']"> Country is required.</div>
+                    <div *ngIf="validateFiled['country'].errors && validateFiled['country'].errors['minlength']"> Country should be min 3 character required..</div>
+                    <div *ngIf="validateFiled['country'].errors && validateFiled['country'].errors['maxlength']"> Country should be max 20 character required..</div>
+                    <div *ngIf="validateFiled['country'].errors && validateFiled['country'].errors['pattern']">Special Character not allowed..</div>
+                
+                </div>
+                </div>
+
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/singUp"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
